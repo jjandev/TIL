@@ -9,6 +9,7 @@ mykey.pub
 
 
 # terraform
+terraform_credentials.csv
 terraform.tfvars
 
 # Created by https://www.toptal.com/developers/gitignore/api/terraform
@@ -57,3 +58,8 @@ terraform.rc
 # Java
 .idea
 workspace.iml
+*.iml
+
+
+# istio
+istio
