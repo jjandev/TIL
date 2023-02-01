@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-rs
+  labels:
+    app: myapp-rs
+spec:
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  minReadySeconds: 20
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp-rs
+  template:
+    metadata:
+      labels:
+        app: myapp-rs
+    spec:
+      containers:
+      - name: myapp
+        image: c1t1d0s7/myweb
+        ports:
+        - containerPort: 8080

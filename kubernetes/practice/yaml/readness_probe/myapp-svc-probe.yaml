@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-svc-probe2
+spec:
+  type: ClusterIP
+  selector:
+    matchLabels:
+      app: myapp-probe
+  template:
+    metadata:
+      labels:
+        app: myapp-probe
+    spec:
+      containers:
+      - name: myapp
+        image: c1t1d0s7/myweb
+        readinessProbe:
+          exec:
+            command: ["ls", "/var/ready"]
+        ports:
+        - containerPort: 8080

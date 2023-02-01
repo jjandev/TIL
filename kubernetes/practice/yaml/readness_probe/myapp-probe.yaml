@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-probe
+spec:
+  replicas: 3
+  selector:
+    match
+  app: myapp-probe
+
+spec:
+  containers:
+  - name: myapp
+    image: c1t1d0s7/myweb
+    ports:
+    - name: app-http
+      containerPort: 8080
+    readnessProbe:
+      exec:
+        command: ["ls", "/var/ready"]

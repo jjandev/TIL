@@ -1,0 +1,12 @@
+# test
+alias k=kubectl alias kgp=kubectl get pods
+alias k=kubectl
+alias kgp='kubectl get pods'
+alias k=kubectl
+alias kgp="kubectl get pods"
+alias k=kubectl
+lias kgp="kubectl get pods"
+alias k=kubectl
+ alias kgp="kubectl get pods"
+alias k=kubectl
+alias kgp="kubectl get pods"
